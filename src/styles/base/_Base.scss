@@ -1,3 +1,21 @@
+@font-face {
+  font-family: "openhuninn";
+  src: local("openhuninn"), url("../../assets/fonts/openhuninn.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "CHIKARA-DZUYOKU";
+  src: local("CHIKARA-DZUYOKU"), url("../../assets/fonts/CHIKARA-DZUYOKU.ttf") format("opentype");
+}
+
+body,
+div,
+p,
+label,
+span {
+  font-family: "openhuninn", "CHIKARA-DZUYOKU", "Noto Sans TC", "Roboto", sans-serif;
+}
+
 #root:empty {
   background-image: url("../../assets/imgaes/loading.gif");
   background-repeat: no-repeat;
