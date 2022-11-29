@@ -8,6 +8,11 @@
   src: local("CHIKARA-DZUYOKU"), url("../../assets/fonts/CHIKARA-DZUYOKU.ttf") format("opentype");
 }
 
+@font-face {
+  font-family: "KFhimaji";
+  src: local("KFhimaji"), url("../../assets/fonts/KFhimaji.otf") format("opentype");
+}
+
 body,
 div,
 p,
@@ -25,4 +30,16 @@ span {
   position: absolute;
   width: 100vw;
   height: 100vh;
+}
+
+.openhuninn {
+  font-family: "openhuninn";
+}
+
+.chickara {
+  font-family: "CHIKARA-DZUYOKU";
+}
+
+.KFhimaji {
+  font-family: "KFhimaji";
 }
