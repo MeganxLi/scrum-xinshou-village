@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PagesStepList from "./constants/PagesStepList";
 import { useStep } from "./context/StepContext";
+import "animate.css/animate.css";
 import "./styles/App.scss";
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
   const { activeStep } = useStep();
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 2500);
+    setTimeout(() => setLoading(false), 500);
   }, []);
 
   return <>{loading ? null : <div className="App">{PagesStepList[activeStep]}</div>}</>;
