@@ -13,6 +13,15 @@
   src: local("KFhimaji"), url("../../assets/fonts/KFhimaji.otf") format("opentype");
 }
 
+body {
+  background-color: $color-gray;
+  position: relative;
+  color: $color-white;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
 body,
 div,
 p,
