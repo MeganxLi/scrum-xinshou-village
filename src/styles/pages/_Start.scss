@@ -1,8 +1,10 @@
 #Start {
-  display: grid;
-  justify-items: center;
-  padding-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
+  height: 100%;
 
   .banner {
     font-size: 2.5rem;
@@ -24,12 +26,31 @@
   .img {
     position: absolute;
     width: 22rem;
-    bottom: 0;
+    bottom: -50%;
     z-index: -2;
+    animation-fill-mode: forwards;
+    @include duration;
+
+    @include rwd(xs) {
+      width: 16rem;
+    }
   }
 
   .img_left {
     left: 0;
+  }
+
+  .giphy {
+    width: 3rem;
+    bottom: 18rem;
+    right: 17rem;
+    transform: rotate(270deg);
+    animation-fill-mode: backwards;
+
+    @include rwd(xs) {
+      bottom: 13rem;
+      right: 13rem;
+    }
   }
 
   .img_right {
@@ -43,16 +64,27 @@
   h3 {
     font-size: 5rem;
     letter-spacing: 0.3em;
+
+    @include rwd(xs) {
+      font-size: 4rem;
+    }
   }
 
   h2 {
     font-size: 11.25rem;
+    margin-bottom: 5rem;
+
+    @include rwd(xs) {
+      font-size: 9rem;
+    }
   }
 
   button {
     color: $color-yellow;
     font-size: 3.75rem;
     letter-spacing: 0.2em;
+    animation-fill-mode: backwards;
+    @include duration;
 
     &:hover {
       transform: scale(1.3);

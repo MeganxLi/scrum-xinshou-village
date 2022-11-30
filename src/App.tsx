@@ -12,7 +12,8 @@ function App() {
     setTimeout(() => setLoading(false), 500);
   }, []);
 
-  return <>{loading ? null : <div className="App">{PagesStepList[activeStep]}</div>}</>;
+  // return <>{loading ? null : PagesStepList[activeStep]}</>;
+  return <>{PagesStepList[activeStep]}</>;
 }
 
 export default App;

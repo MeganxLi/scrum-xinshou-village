@@ -48,7 +48,31 @@ $fonts: (
     ),
   //48px
 );
+
 @mixin font-size($text-name) {
   font-size: nth(map-get($fonts, $text-name), 1);
   line-height: nth(map-get($fonts, $text-name), 2);
+}
+
+// RWD
+$media: (
+  2xs: 375px,
+  xs: 480px,
+  sm: 640px,
+  md: 768px,
+  lg: 992px,
+  xl: 1280px,
+  2xl: 1536px,
+);
+
+@mixin rwd($breakpoint) {
+  @if map-has-key($media, $breakpoint) {
+    $point: map-get($media, $breakpoint);
+
+    @media (max-width: $point) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
 }
