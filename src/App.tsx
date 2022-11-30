@@ -1,21 +1,19 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.scss";
+import React, { useEffect, useState } from "react";
+import PagesStepList from "./constants/PagesStepList";
+import { useStep } from "./context/StepContext";
+import "animate.css/animate.css";
+import "./styles/App.scss";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [loading, setLoading] = useState<boolean>(true);
+  const { activeStep } = useStep();
+
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 500);
+  }, []);
+
+  // return <>{loading ? null : PagesStepList[activeStep]}</>;
+  return <>{PagesStepList[activeStep]}</>;
 }
 
 export default App;

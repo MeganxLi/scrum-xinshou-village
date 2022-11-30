@@ -1,0 +1,76 @@
+@font-face {
+  font-family: "openhuninn";
+  src: local("openhuninn"), url("../../assets/fonts/openhuninn.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "CHIKARA-DZUYOKU";
+  src: local("CHIKARA-DZUYOKU"), url("../../assets/fonts/CHIKARA-DZUYOKU.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "KFhimaji";
+  src: local("KFhimaji"), url("../../assets/fonts/KFhimaji.otf") format("opentype");
+}
+
+// font-family
+.openhuninn {
+  font-family: "openhuninn";
+}
+
+.chickara {
+  font-family: "CHIKARA-DZUYOKU";
+}
+
+.KFhimaji {
+  font-family: "KFhimaji";
+}
+
+html {
+  font-size: 16px;
+
+  @include rwd(xl) {
+    font-size: 14px;
+  }
+
+  @include rwd(xs) {
+    font-size: 12px;
+  }
+}
+
+body {
+  background-color: $color-gray;
+  position: relative;
+  color: $color-white;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+body,
+div,
+p,
+label,
+span {
+  font-family: "openhuninn", "CHIKARA-DZUYOKU", "Noto Sans TC", "Roboto", sans-serif;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+#root:empty {
+  background-image: url("../../assets/imgaes/loading.gif");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+.duration {
+  @include duration;
+}
