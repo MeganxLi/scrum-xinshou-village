@@ -84,11 +84,9 @@
     font-size: 3.75rem;
     letter-spacing: 0.2em;
     animation-fill-mode: backwards;
-    @include duration;
 
-    &:hover {
-      transform: scale(1.3);
-      transition: all 0.5s ease;
+    @include rwd(xs) {
+      font-size: 2rem;
     }
   }
 }

@@ -60,6 +60,10 @@ span {
   height: 100%;
 }
 
+section {
+  height: 100%;
+}
+
 #root:empty {
   background-image: url("../../assets/imgaes/loading.gif");
   background-repeat: no-repeat;
