@@ -1,0 +1,44 @@
+#Story {
+  position: relative;
+
+  img {
+    margin: 0 auto;
+    display: block;
+  }
+
+  .pad {
+    position: absolute;
+    bottom: 0;
+    background-image: url("../../assets/imgaes/pad.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: calc(0.664 * 100vw);
+    padding-top: calc(0.08 * 100vw);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+    animation-duration: calc(var(--animate-duration) * 1.4);
+    animation-name: backInUp;
+    transform: translate3d(0, 380px, 0) scale(1.1);
+    animation-fill-mode: forwards;
+
+    p,
+    button {
+      font-size: 2.5rem;
+      @include rwd(xs) {
+        font-size: 1rem;
+      }
+    }
+    p {
+      text-align: center;
+      color: $color-gray;
+    }
+
+    button {
+      color: $color-gray;
+    }
+  }
+}

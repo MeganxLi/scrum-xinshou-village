@@ -33,3 +33,20 @@
     visibility: visible;
   }
 }
+
+@keyframes backInUp {
+  0% {
+    -webkit-transform: translate3d(0, 380px, 0) scale(0.9);
+    transform: translate3d(0, 380px, 0) scale(0.9);
+  }
+
+  95% {
+    -webkit-transform: translate3d(0, 0, 0) scale(1.1);
+    transform: translate3d(0, 0, 0) scale(1.1);
+  }
+
+  100% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
