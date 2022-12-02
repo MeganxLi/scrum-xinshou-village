@@ -78,3 +78,41 @@ section {
 .duration {
   @include duration;
 }
+
+.dialog-box,
+.dialog-content {
+  border: 4px solid #201c1b;
+  border-radius: 8px;
+}
+
+.dialog-box {
+  background-color: #9e9d9c;
+  padding: 8px;
+  position: absolute;
+  bottom: 5%;
+  width: 90%;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  .dialog-content {
+    background-color: #f3eee9;
+    color: $color-gray;
+    padding: 2rem 2.5rem;
+    font-size: 2rem;
+    position: relative;
+    line-height: 150%;
+    text-align: justify;
+    letter-spacing: 0.05em;
+
+    @include rwd(xl) {
+      font-size: 1.5rem;
+    }
+
+    @include rwd(xs) {
+      font-size: 12px;
+    }
+  }
+  p {
+    margin-bottom: 1rem;
+  }
+}
