@@ -1,13 +1,13 @@
 //util
-@import "util/mixin";
-@import "util/variables";
-@import "util/animate";
+@import "util/Mixin";
+@import "util/Variables";
+@import "util/Animate";
 
 //base
-@import "base/reset";
-@import "base/base";
-@import "base/button";
+@import "base/Reset";
+@import "base/Base";
+@import "base/Button";
 
 //page
-@import "pages/start";
-@import "pages/story";
+@import "pages/Start";
+@import "pages/Story";
