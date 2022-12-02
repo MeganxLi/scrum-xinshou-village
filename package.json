@@ -45,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "@icon-park/react": "^1.4.2",
     "@typescript-eslint/eslint-plugin": "^5.44.0",
     "eslint": "^8.28.0",
     "eslint-config-standard-with-typescript": "^23.0.0",
