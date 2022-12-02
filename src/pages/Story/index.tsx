@@ -14,7 +14,7 @@ const Story = () => {
           在加入我們之前，請先<br />
           了解 Scrum 的精神並通過任務!
         </p>
-        <button onClick={nextStep} className="chickara ">
+        <button onClick={nextStep} className="next-step chickara button-scale">
           接受
         </button>
       </div>
