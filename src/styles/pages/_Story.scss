@@ -4,6 +4,14 @@
   img {
     margin: 0 auto;
     display: block;
+
+    @include rwd(xs) {
+      width: 25rem;
+      position: absolute;
+      bottom: 30%;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
   }
 
   .pad {
@@ -19,7 +27,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 6rem;
+    gap: 3rem;
     animation-duration: calc(var(--animate-duration) * 1.4);
     animation-name: backInUp;
     transform: translate3d(0, 380px, 0) scale(1.1);
