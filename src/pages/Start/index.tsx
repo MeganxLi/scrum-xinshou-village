@@ -1,4 +1,3 @@
-import React from "react";
 import { useStep } from "../../context/StepContext";
 import Banner from "./Banner";
 

@@ -12,9 +12,5 @@ button {
 
   &.next-step {
     font-size: 3.75rem;
-
-    @include rwd(xs) {
-      font-size: 2rem;
-    }
   }
 }

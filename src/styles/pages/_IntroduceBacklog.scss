@@ -1,8 +1,17 @@
 #IntroduceBacklog {
+  .dialog-content {
+    height: 200px;
+  }
   .role {
-    transform: scale(-0.8, 0.8);
+    transform: scaleX(-1);
+    width: 30rem;
     position: absolute;
-    bottom: 25%;
+    bottom: 32%;
+
+    @include rwd(xs) {
+      width: 25rem;
+      bottom: 40%;
+    }
   }
 
   .bla {
@@ -11,6 +20,9 @@
     bottom: 50%;
     left: 35%;
     opacity: 0.6;
+    @include rwd(xs) {
+      left: 12%;
+    }
   }
 
   .icon-down {
@@ -22,6 +34,7 @@
   button {
     margin: 0 auto;
     display: block;
+    animation-fill-mode: backwards;
   }
 
   .icon-undo {
