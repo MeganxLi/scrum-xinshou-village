@@ -1,2 +1,17 @@
 #IntroduceTeam {
+  .role-left,
+  .role-right {
+    width: 30rem;
+    position: absolute;
+    bottom: 32%;
+    animation-fill-mode: backwards;
+
+    @include rwd(xs) {
+      width: 18rem;
+      bottom: 43%;
+    }
+  }
+  .role-right {
+    right: 0;
+  }
 }

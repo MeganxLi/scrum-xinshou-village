@@ -66,20 +66,3 @@
   -webkit-animation-name: zoomIn;
   animation-name: zoomIn;
 }
-
-@keyframes slideInLeft {
-  from {
-    -webkit-transform: translateX(-100%) scaleX(-1);
-    transform: translateX(-100%) scaleX(-1);
-    visibility: visible;
-  }
-
-  to {
-    -webkit-transform: translateX(0) scaleX(-1);
-    transform: translateX(0) scaleX(-1);
-  }
-}
-.slideInLeft {
-  -webkit-animation-name: slideInLeft;
-  animation-name: slideInLeft;
-}
