@@ -1,5 +1,4 @@
 import { DownOne, Undo } from "@icon-park/react";
-import { useRef } from "react";
 
 interface props {
   DialogItem: DialogComponentType
@@ -7,12 +6,11 @@ interface props {
 
 const Dialog = ({ DialogItem }: props) => {
   const { text, button, icon } = DialogItem;
-  const textRef = useRef(null);
 
   return (
     <div className="dialog-box">
       <div className="dialog-content" >
-        <div className="animate__slideInUp duration" ref={textRef}>
+        <div className="animate__slideInUp duration">
           {text}
         </div>
         {button &&
