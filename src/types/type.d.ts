@@ -22,3 +22,11 @@ interface DialogComponentType {
   button?: DialogButtonType,
   icon?: DialogButtonType
 }
+
+interface ImgAnimateType {
+  showOrder: number[],
+  imgUrl: string,
+  delaySec: number,
+  direction: "left" | "right",
+  style?: React.CSSProperties,
+}

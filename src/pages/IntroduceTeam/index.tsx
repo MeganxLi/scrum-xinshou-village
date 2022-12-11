@@ -3,6 +3,7 @@ import Dialog from "../../components/Dialog";
 import { DialogIconButton } from "../../constants/EnumType";
 import { useStep } from "../../context/StepContext";
 import { DialogOrder } from "../../utils/DialogOrder";
+import RoleImg from "./RoleImg";
 
 const IntroduceTeam = () => {
   const { nextStep } = useStep();
@@ -17,6 +18,46 @@ const IntroduceTeam = () => {
   const prevOrder = (specifyOrder: number) => {
     setOrder(specifyOrder);
   };
+
+  const ImgList: ImgAnimateType[] = [
+    {
+      showOrder: [0, 1],
+      imgUrl: "/images/img_po_2.png",
+      delaySec: 0,
+      direction: "left",
+    },
+    {
+      showOrder: [2, 3, 4],
+      imgUrl: "/images/img_sm.png",
+      delaySec: 0,
+      direction: "right"
+    },
+    {
+      showOrder: [3],
+      imgUrl: "/images/img_dev01.png",
+      delaySec: 1,
+      direction: "left"
+    },
+    {
+      showOrder: [3],
+      imgUrl: "/images/img_dev02.png",
+      delaySec: 0,
+      direction: "left",
+      style: { marginLeft: "15%" },
+    },
+    {
+      showOrder: [5],
+      imgUrl: "/images/img_dev02.png",
+      delaySec: 0,
+      direction: "left"
+    },
+    {
+      showOrder: [6],
+      imgUrl: "/images/img_dev01_right.png",
+      delaySec: 0,
+      direction: "right",
+    },
+  ];
 
   const DialogList: DialogComponentType[] = [
     {
@@ -124,6 +165,9 @@ const IntroduceTeam = () => {
 
   return (
     <section id="IntroduceTeam">
+      {ImgList.map((item: ImgAnimateType, idx: number) => {
+        return item.showOrder.some(e => e === order) && <RoleImg userImgItem={item} key={idx} />;
+      })}
       {DialogList.map((item: DialogComponentType, idx: number) => {
         return order === idx &&
           <Dialog DialogItem={item} key={idx} />;
