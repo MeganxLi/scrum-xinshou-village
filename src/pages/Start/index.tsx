@@ -11,7 +11,7 @@ const Start = () => {
       <img
         className="img img_left slideInUp"
         style={{ animationDelay: AnimateSec * 1 + "s" }}
-        src={process.env.PUBLIC_URL + "/images/img_po_2.png"}
+        src={process.env.PUBLIC_URL + "/images/img_user2.png"}
       />
       <img
         className="img giphy slideInUp"
