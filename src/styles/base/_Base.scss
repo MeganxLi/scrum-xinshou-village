@@ -90,7 +90,7 @@ section {
 }
 
 .dialog-box {
-  background-color: #9e9d9c;
+  background-color: $color-zorba;
   padding: 8px;
   position: absolute;
   bottom: 5%;
@@ -121,9 +121,13 @@ section {
     @include rwd(xs) {
       font-size: 1.2rem;
     }
+    > div {
+      width: 100%;
+    }
   }
   p {
     margin-bottom: 1rem;
+    width: 100%;
   }
 
   .icon-down {
@@ -136,7 +140,7 @@ section {
     position: absolute;
     right: 2.5rem;
     bottom: 2rem;
-    color: #9e9d9c;
+    color: $color-zorba;
     cursor: pointer;
   }
 
