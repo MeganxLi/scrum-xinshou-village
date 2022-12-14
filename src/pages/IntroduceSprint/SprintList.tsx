@@ -1,5 +1,6 @@
 import { Undo } from "@icon-park/react";
 import React, { useEffect, useRef, useState } from "react";
+import { DialogOrder } from "../../utils/DialogOrder";
 
 interface props {
   setOrder: React.Dispatch<React.SetStateAction<number>>
@@ -8,6 +9,8 @@ interface props {
 const SprintList = ({ setOrder }: props) => {
   const [sprintStep, setSprintStep] = useState<number>(0);
   const hiddenRef = useRef<boolean>(false);
+
+  DialogOrder(sprintStep, setSprintStep, [2]);
 
   useEffect(() => {
     setTimeout(() => {
