@@ -7,9 +7,7 @@ interface DropItemType {
 
 interface TaskPriorityItemsType {
   candidate: DropItemType[];
-  productBacklog: {
-    items: []
-  }
+  sprintList: DropItemType[]
 }
 
 interface DialogButtonType {
