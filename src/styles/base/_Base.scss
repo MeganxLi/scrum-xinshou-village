@@ -55,6 +55,10 @@ span {
   font-family: "openhuninn", "CHIKARA-DZUYOKU", "Noto Sans TC", "Roboto", sans-serif;
 }
 
+p {
+  line-height: 150%;
+}
+
 #root {
   width: 100%;
   height: 100%;
@@ -77,4 +81,84 @@ section {
 
 .duration {
   @include duration;
+}
+
+.dialog-box,
+.dialog-content {
+  border: 4px solid #201c1b;
+  border-radius: 8px;
+}
+
+.dialog-box {
+  background-color: $color-zorba;
+  padding: 8px;
+  position: absolute;
+  bottom: 5%;
+  width: 90%;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  .dialog-content {
+    background-color: #f3eee9;
+    color: $color-gray;
+    padding: 2rem 2.5rem;
+    font-size: 2rem;
+    position: relative;
+    line-height: 150%;
+    text-align: justify;
+    letter-spacing: 0.05em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    min-height: 200px;
+
+    @include rwd(xl) {
+      font-size: 1.5rem;
+    }
+
+    @include rwd(xs) {
+      font-size: 1.2rem;
+    }
+    > div {
+      width: 100%;
+    }
+  }
+  p {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+
+  .icon-down {
+    cursor: pointer;
+  }
+
+  .icon-undo {
+    display: block;
+    transform: scaleX(-1);
+    position: absolute;
+    right: 2.5rem;
+    bottom: 2rem;
+    color: $color-zorba;
+    cursor: pointer;
+  }
+
+  .click-continue,
+  .icon-down,
+  button {
+    animation-fill-mode: backwards;
+    animation-delay: 0.5s;
+  }
+
+  .click-continue {
+    font-size: 1.25rem;
+    color: $color-gray;
+    opacity: 0.8;
+  }
+
+  button {
+    margin: 0 auto;
+    display: block;
+  }
 }

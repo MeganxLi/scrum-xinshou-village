@@ -1,0 +1,115 @@
+#IntroduceSprint {
+  .sprint-dialog {
+    img {
+      position: absolute;
+      width: 45rem;
+      bottom: 32%;
+      right: 0;
+      animation-delay: 0.5s;
+      animation-fill-mode: backwards;
+
+      &:first-child {
+        left: 0;
+      }
+
+      @include rwd(xs) {
+        width: 30rem;
+        bottom: 40%;
+        right: -70px;
+
+        &:first-child {
+          left: -70px;
+        }
+      }
+    }
+  }
+  .sprint-list {
+    padding: 20px;
+
+    .sprint-list-hint {
+      position: relative;
+      font-size: 30px;
+      text-align: center;
+
+      .img-giphy {
+        position: absolute;
+        width: 2rem;
+        top: -15px;
+      }
+    }
+
+    .spring-list-text {
+      bottom: auto;
+      margin-top: 3rem;
+      max-width: 1020px;
+
+      .dialog-content {
+        padding: 4rem;
+        padding-bottom: 2rem;
+
+        .dialog-content-slide {
+          display: grid;
+        }
+        .dialog-content-text {
+          animation-fill-mode: forwards;
+          grid-area: 1/1;
+        }
+      }
+      .img-stars {
+        position: absolute;
+        right: 75px;
+        top: 0;
+        width: 7rem;
+        @include rwd(xs) {
+          width: 4rem;
+          top: 36px;
+        }
+      }
+
+      .icon-undo {
+        bottom: auto;
+      }
+
+      button {
+        margin: 2rem 0;
+      }
+
+      .slick-list {
+        display: flex;
+        gap: 1rem;
+        > li {
+          width: 24px;
+          height: 24px;
+          background: $color-zorba;
+          opacity: 0.5;
+          cursor: pointer;
+          @include rwd(xs) {
+            width: 16px;
+            height: 16px;
+          }
+        }
+        > li.slick-active {
+          opacity: 1;
+        }
+      }
+    }
+    .role {
+      width: 40rem;
+      position: absolute;
+      z-index: 2;
+      bottom: -70px;
+      animation-fill-mode: forwards;
+      pointer-events: none;
+      @include rwd(xs) {
+        width: 50%;
+        bottom: 0;
+      }
+    }
+    .role-left {
+      left: -10%;
+    }
+    .role-right {
+      right: -10%;
+    }
+  }
+}

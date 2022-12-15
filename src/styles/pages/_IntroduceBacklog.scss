@@ -1,0 +1,26 @@
+#IntroduceBacklog {
+  .dialog-content {
+    height: 200px;
+  }
+  .role {
+    width: 30rem;
+    position: absolute;
+    bottom: 32%;
+
+    @include rwd(xs) {
+      width: 25rem;
+      bottom: 40%;
+    }
+  }
+
+  .bla {
+    transform: scale(0.2) rotate(20deg);
+    position: absolute;
+    bottom: 50%;
+    left: 35%;
+    opacity: 0.6;
+    @include rwd(xs) {
+      left: 12%;
+    }
+  }
+}
