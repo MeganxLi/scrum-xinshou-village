@@ -1,7 +1,7 @@
 import { useState } from "react";
 import uuid from "react-uuid";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
-import DropItem from "./DropItem";
+import DropItem from "../../components/DropItem";
 
 const TaskPriority = () => {
   const [items, setItems] = useState<TaskPriorityItemsType>(

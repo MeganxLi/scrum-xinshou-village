@@ -1,10 +1,4 @@
 #TaskPriority {
-  .directions {
-    font-size: 1.5rem;
-    text-align: center;
-    margin-top: 1.5rem;
-  }
-
   .img-crocodile {
     position: absolute;
     width: 30rem;
@@ -34,41 +28,13 @@
     .pad-content {
       width: calc(100% - 458px);
       margin-bottom: 4rem;
-      display: grid;
       grid-template-areas:
         "title sort"
         "list  sort";
     }
 
-    .pad-title {
-      color: $color-gray;
-      grid-area: title;
-      p {
-        opacity: 0.6;
-      }
-      h5 {
-        font-size: 2rem;
-        sub {
-          font-size: 1.5rem;
-        }
-      }
-    }
-
     .drop-list {
-      grid-area: list;
       .drop-item {
-        outline: 3px solid $color-blue;
-        border: 3px solid #f4eee8;
-        background-color: $color-blue;
-        border-radius: 5px;
-        margin: 1rem;
-        width: 225px;
-        height: 90px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-
         &:nth-child(odd) {
           margin-right: 3rem;
         }
@@ -76,18 +42,10 @@
         &:nth-child(even) {
           margin-left: 3rem;
         }
-
-        p:first-child {
-          font-size: 20px;
-        }
-        p:last-child {
-          font-size: 12px;
-        }
       }
     }
 
     .drop-sort-list {
-      grid-area: sort;
       position: relative;
       background-color: $color-blue;
       border-radius: 20px;
