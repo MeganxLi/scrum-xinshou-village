@@ -83,6 +83,14 @@ section {
   @include duration;
 }
 
+.animation-forwards {
+  animation-fill-mode: forwards;
+}
+
+.animation-backwards {
+  animation-fill-mode: backwards;
+}
+
 .dialog-box,
 .dialog-content {
   border: 4px solid #201c1b;
@@ -169,18 +177,39 @@ section {
   margin-top: 1.5rem;
 }
 
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
 .pad {
+  background-image: url("../../assets/images/pad_2.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  width: 100%;
+  max-width: 1100px;
+  height: calc(0.664 * 100vw);
+  max-height: 680px;
+  padding-top: 70px;
+  position: absolute;
+  top: 0;
+
   .pad-content {
+    width: calc(100% - 458px);
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr;
     gap: 1rem;
+    z-index: 2;
+    margin: 0 20vw;
+    margin-top: 2.5rem;
   }
 
   .pad-title {
     color: $color-gray;
     grid-area: title;
     p {
+      margin-bottom: 0.5rem;
       opacity: 0.6;
     }
   }
@@ -199,11 +228,14 @@ section {
     }
   }
 
-  .drop-list {
+  .drop-list,
+  .drop-sort-list {
     grid-area: list;
     display: grid;
     grid-template-rows: repeat(4, 1fr);
     justify-items: center;
+    border-radius: 20px;
+    padding: 1rem 0;
     .drop-item {
       outline: 3px solid $color-blue;
       border: 3px solid #f4eee8;
@@ -221,15 +253,13 @@ section {
       font-size: 20px;
     }
     p:last-child {
+      text-align: center;
       font-size: 12px;
     }
   }
 
   .drop-sort-list {
     grid-area: sort;
-    height: 100%;
-    > .drop-list {
-      height: 100%;
-    }
+    height: -webkit-fill-available;
   }
 }

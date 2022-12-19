@@ -1,0 +1,78 @@
+#TaskShort {
+  .banner {
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  .img-bla {
+    width: 10%;
+    position: absolute;
+    left: 25%;
+    top: 8vw;
+    opacity: 0.6;
+    transform: rotate(-15deg);
+
+    &:last-child {
+      left: auto;
+      right: 20%;
+      top: 5vw;
+      transform: rotate(12deg);
+    }
+  }
+  .pad {
+    .img-pad {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -10%);
+      width: 100%;
+      z-index: 1;
+    }
+    .pad-content {
+      grid-template-areas:
+        "title title2 action"
+        "list  sort action";
+      align-items: end;
+    }
+
+    .drop-sort-list {
+      outline: 4px dashed $color-blue;
+      border-radius: 20px;
+    }
+    .drop-item {
+      position: relative;
+      &::before {
+        content: attr(data-score);
+        background-image: url("../../assets/images/score.png");
+        width: 48px;
+        height: 50px;
+        position: absolute;
+        top: -1rem;
+        right: -1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        color: $color-blue;
+      }
+    }
+
+    .pad-action {
+      grid-area: action;
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      > .icon-undo {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        display: block;
+        transform: scaleX(-1);
+        color: $color-zorba;
+        cursor: pointer;
+      }
+    }
+  }
+}
