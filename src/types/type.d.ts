@@ -2,7 +2,7 @@ interface DropItemType {
   title: string;
   subtitle?: string;
   id: string;
-  priority: number;
+  score?: number;
 }
 
 interface TaskPriorityItemsType {
