@@ -36,7 +36,7 @@ const TaskShort = () => {
     setItems(newItems);
 
     const total = newItems.sprintList.reduce(
-      (accumulator, currentValue) => accumulator + currentValue.priority,
+      (accumulator, currentValue) => accumulator + (currentValue.score || 0),
       0
     );
     setTotalScoreSum(total);
@@ -68,6 +68,7 @@ const TaskShort = () => {
                   className="drop-list"
                   ref={provided.innerRef}
                   {...provided.droppableProps}
+                  style={{ backgroundColor: totalScoreSum > 0 ? "#1a64fb" : "" }}
                 >
                   {items.candidate.map((item: DropItemType, index: number) => {
                     return (
@@ -109,7 +110,9 @@ const TaskShort = () => {
 
           </DragDropContext>
           <div className="pad-action">
-            <img src={process.env.PUBLIC_URL + "/images/go.png"} />
+            <img src={process.env.PUBLIC_URL + "/images/go.png"}
+              style={{ visibility: totalScoreSum === 16 ? "visible" : "hidden" }}
+            />
             <Undo
               strokeWidth={4}
               size={32}

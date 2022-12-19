@@ -14,6 +14,7 @@ const DropItem = ({ item, index }: props) => {
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
+          data-score={item.score}
         >
           <p className="drop-item-title">{item.title}</p>
           <p className="drop-item-subtitle">{item.subtitle}</p>
