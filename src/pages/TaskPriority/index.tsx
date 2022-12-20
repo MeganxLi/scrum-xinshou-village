@@ -2,8 +2,12 @@ import { useState } from "react";
 import uuid from "react-uuid";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import DropItem from "../../components/DropItem";
+import { useStep } from "../../context/StepContext";
+
+const animationDelay = { animationDelay: "1s" };
 
 const TaskPriority = () => {
+  const { nextStep } = useStep();
   const [items, setItems] = useState<TaskPriorityItemsType>(
     {
       candidate: [
@@ -60,15 +64,24 @@ const TaskPriority = () => {
   };
 
   return (
-    <section id="TaskPriority">
-      <p className="directions">請把需求放到產品待辦清單，並調整待辦的優先度順序。</p>
+    <section id="TaskPriority" className="flex-center">
       <img
-        className="img-crocodile"
+        className="img-crocodile animate__fadeOut duration animation-forwards"
         src={process.env.PUBLIC_URL + "/images/img_po.png"}
+        style={animationDelay}
       />
+      <p
+        className="directions animate__fadeInRight duration animation-backwards"
+        style={animationDelay}
+      >
+        請把需求放到產品待辦清單，並調整待辦的優先度順序。
+      </p>
 
       <DragDropContext onDragEnd={onDragEnd}>
-        <div className="pad">
+        <div
+          className="pad animate__rotateInUpLeft duration animation-backwards"
+          style={animationDelay}
+        >
           <div className="pad-content">
             <div className="pad-title">
               <p>Projects / TT / 人才招募系統 </p>
@@ -94,7 +107,7 @@ const TaskPriority = () => {
 
               )}
             </Droppable>
-            <div className="drop-sort-list">
+            <div className="drop-sort-list-content">
               <p>
                 依優先排序
               </p>
@@ -102,7 +115,7 @@ const TaskPriority = () => {
               <Droppable droppableId="sprintList">
                 {(provided) => (
                   <div
-                    className="drop-list"
+                    className="drop-sort-list"
                     ref={provided.innerRef}
                     {...provided.droppableProps}
                   >
@@ -119,7 +132,7 @@ const TaskPriority = () => {
                 )}
 
               </Droppable>
-              {
+              {/* {
                 Array.from(Array(4 - items.sprintList.length), (e, i: number) => {
                   const iPage = i + items.sprintList.length + 1;
                   return (
@@ -131,7 +144,7 @@ const TaskPriority = () => {
                     </div>
                   );
                 })
-              }
+              } */}
               <img className="drop-sort-tip"
                 src={process.env.PUBLIC_URL + "/images/arrow.png"}
               />

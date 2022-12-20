@@ -3,6 +3,7 @@
     position: absolute;
     width: 30rem;
     right: 10vw;
+    top: 3rem;
 
     @include rwd(xs) {
       left: 50%;
@@ -11,20 +12,6 @@
   }
 
   .pad {
-    background-image: url("../../assets/images/pad_2.png");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: right bottom;
-    width: 100%;
-    max-width: 1100px;
-    height: calc(0.664 * 100vw);
-    max-height: 680px;
-    padding-top: 150px;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
-
     .pad-content {
       width: calc(100% - 458px);
       margin-bottom: 4rem;
@@ -46,15 +33,6 @@
     }
 
     .drop-sort-list {
-      position: relative;
-      background-color: $color-blue;
-      border-radius: 20px;
-      padding: 1.5rem 0 1.5rem 3rem;
-
-      p {
-        font-size: 1.25rem;
-      }
-
       .drop-sort-item {
         width: 275px;
         height: 120px;
@@ -70,20 +48,28 @@
           opacity: 0.4;
         }
       }
+    }
 
-      .drop-sort-tip {
-        text-align: center;
-        background: $color-blue;
-        border-radius: 20px;
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-      }
+    .drop-sort-list-content {
+      grid-area: sort;
+      position: relative;
+      background-color: $color-blue;
+      border-radius: 20px;
+      padding: 1.5rem 4.5rem 1.5rem 1.5rem;
+    }
+
+    .drop-sort-tip {
+      text-align: center;
+      background: $color-blue;
+      border-radius: 20px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
     }
   }
 }
