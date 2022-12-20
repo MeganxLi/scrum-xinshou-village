@@ -88,7 +88,7 @@ const TaskPriority = () => {
               <h5>產品待辦清單 <sub>(Product Backlog)</sub></h5>
             </div>
 
-            <Droppable droppableId="candidate">
+            <Droppable droppableId="candidate" isDropDisabled={items.candidate.length === 0}>
               {(provided) => (
                 <div
                   className="drop-list"
@@ -102,11 +102,13 @@ const TaskPriority = () => {
                   })}
 
                   {provided.placeholder}
-
+                  {items.candidate.length === 0 &&
+                    <button className="next-step chickara" onClick={nextStep}>Done!</button>}
                 </div>
 
               )}
             </Droppable>
+
             <div className="drop-sort-list-content">
               <p>
                 依優先排序
