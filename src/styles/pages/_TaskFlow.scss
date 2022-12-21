@@ -1,0 +1,80 @@
+#TaskFlow {
+  .banner {
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  .img-bla {
+    width: 10%;
+    position: absolute;
+    left: 25%;
+    top: 8vw;
+    opacity: 0.6;
+    transform: rotate(-15deg);
+
+    &:last-child {
+      left: auto;
+      right: 20%;
+      top: 5vw;
+      transform: rotate(12deg);
+    }
+  }
+
+  .dialog-box {
+    .dialog-content {
+      min-height: auto;
+    }
+
+    h3 {
+      font-size: 4.5rem;
+      padding: 4rem 0;
+    }
+
+    .task-directions {
+      font-size: 2rem;
+      line-height: 150%;
+      text-align: center;
+      letter-spacing: 0.05em;
+      margin-bottom: 3rem;
+    }
+
+    h5 {
+      padding: 4px 24px;
+      background-color: #d9d9d9;
+      display: inline-block;
+    }
+
+    .sprint-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .sprint-drop {
+        background-image: url("../../assets/images/img_sprint.png");
+        background-repeat: no-repeat;
+        background-position: left top;
+        background-size: contain;
+        width: 80vw;
+        height: 35vw;
+        margin-top: 5rem;
+      }
+
+      .sprint-list {
+        display: flex;
+        gap: 4rem;
+      }
+
+      .drop-item {
+        width: 180px;
+        height: auto;
+        margin: auto;
+        padding: 0.5rem;
+
+        &:nth-child(even) {
+          margin-top: 3rem;
+        }
+      }
+    }
+  }
+}
