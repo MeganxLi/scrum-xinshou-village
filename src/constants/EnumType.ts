@@ -5,7 +5,7 @@ export enum DialogIconButton {
   DownOne = "DownOne",
 }
 
-export const TaskShortItem = {
+export const TaskShortItem: TaskPriorityItemsType = {
   candidate: [
     {
       title: "後台職缺管理功能",
@@ -29,6 +29,27 @@ export const TaskShortItem = {
       title: "線上履歷編輯器",
       id: uuid(),
       score: 15,
+    },
+  ],
+  sprintList: []
+};
+
+export const TaskFlowItem: TaskPriorityItemsType = {
+  candidate: [
+    {
+      title: "短衝自省會議",
+      subtitle: "(Retro)",
+      id: uuid(),
+    },
+    {
+      title: "每日站立會議",
+      subtitle: "(Daily Scrum)",
+      id: uuid(),
+    },
+    {
+      title: "短衝檢視會議",
+      subtitle: "(Sprint Review)",
+      id: uuid(),
     },
   ],
   sprintList: []
