@@ -1,29 +1,46 @@
 #TaskFlow {
-  .banner {
-    width: 80%;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
-  }
-  .img-bla {
-    width: 10%;
-    position: absolute;
-    left: 25%;
-    top: 8vw;
-    opacity: 0.6;
-    transform: rotate(-15deg);
+  .flow-talk-box {
+    position: relative;
+    height: 100vh;
 
-    &:last-child {
-      left: auto;
-      right: 20%;
-      top: 5vw;
-      transform: rotate(12deg);
+    .banner {
+      width: 80%;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
     }
-  }
+    .img-bla {
+      width: 10%;
+      position: absolute;
+      left: 25%;
+      top: 8vw;
+      opacity: 0.6;
+      transform: rotate(-15deg);
 
-  .dialog-box {
-    .dialog-content {
-      min-height: auto;
+      &.img-bla-right {
+        left: auto;
+        right: 20%;
+        top: 5vw;
+        transform: rotate(12deg);
+      }
+    }
+
+    .flow-talk-dialog,
+    .flow-talk-content {
+      @include dialog-border;
+      border-bottom: none;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    .flow-talk-dialog {
+      @include dialog-box;
+      padding-bottom: 0;
+      bottom: 0;
+    }
+
+    .flow-talk-content {
+      @include dialog-content;
     }
 
     h3 {
@@ -38,7 +55,9 @@
       letter-spacing: 0.05em;
       margin-bottom: 3rem;
     }
+  }
 
+  .dialog-box {
     h5 {
       padding: 4px 24px;
       background-color: #d9d9d9;
