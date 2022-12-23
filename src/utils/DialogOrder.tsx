@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 
 export const DialogOrder = (
@@ -11,6 +10,10 @@ export const DialogOrder = (
 
   useEffect(() => {
     setTimes(0);
+
+    // stopArray 為 []，停止自動
+    if (stopArray.length === 0) return setStart(false);
+
     if (stopArray.some((e: number) => e === order)) {
       setStart(false);
     } else {
@@ -26,14 +29,13 @@ export const DialogOrder = (
     }
 
     const interval = setInterval(() => {
-      setTimes(prev => prev + 1);
+      setTimes((prev) => prev + 1);
     }, 1000);
 
     if (times === 3) {
-      setOrder(prev => prev + 1);
+      setOrder((prev) => prev + 1);
     }
 
     return () => clearInterval(interval);
   }, [start, times]);
-
 };
