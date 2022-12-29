@@ -82,10 +82,7 @@
     .sprint-content {
       @include dialog-content;
       height: calc(100vh - 4rem);
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      justify-content: normal;
 
       .sprint-drop {
         background-image: url("../../assets/images/img_sprint.png");
@@ -95,11 +92,33 @@
         width: 80vw;
         height: 35vw;
         margin-top: 5rem;
+        position: relative;
+
+        .drop-item {
+          margin: unset;
+          position: absolute;
+          &:nth-child(1) {
+            top: 45%;
+            left: 30%;
+          }
+
+          &:nth-child(2) {
+            top: 20%;
+            right: 10%;
+          }
+
+          &:nth-child(3) {
+            bottom: 17%;
+            right: 5%;
+          }
+        }
       }
 
       .sprint-list {
-        display: flex;
+        display: grid;
         gap: 4rem;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        min-height: 110px;
       }
 
       .drop-item {
