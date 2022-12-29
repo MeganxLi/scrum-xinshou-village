@@ -1,0 +1,140 @@
+#TaskFlow {
+  .flow-talk-box {
+    position: relative;
+    height: 100vh;
+
+    .banner {
+      width: 80%;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+    .img-bla {
+      width: 10%;
+      position: absolute;
+      left: 25%;
+      top: 8vw;
+      opacity: 0.6;
+      transform: rotate(-15deg);
+
+      &.img-bla-right {
+        left: auto;
+        right: 20%;
+        top: 5vw;
+        transform: rotate(12deg);
+      }
+    }
+
+    .flow-talk-dialog,
+    .flow-talk-content {
+      @include dialog-border;
+      border-bottom: none;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    .flow-talk-dialog {
+      @include dialog-box;
+      padding-bottom: 0;
+      bottom: 0;
+    }
+
+    .flow-talk-content {
+      @include dialog-content;
+    }
+
+    h3 {
+      font-size: 4.5rem;
+      padding: 4rem 0;
+    }
+
+    .task-directions {
+      font-size: 2rem;
+      line-height: 150%;
+      text-align: center;
+      letter-spacing: 0.05em;
+      margin-bottom: 3rem;
+    }
+  }
+
+  .flow-sprint-dialog,
+  .sprint-content {
+    @include dialog-border;
+    border-top: none;
+    border-bottom: none;
+    border-radius: 0;
+  }
+
+  .flow-sprint-dialog {
+    @include dialog-box;
+    padding-top: 0;
+    padding-bottom: 0;
+    top: 0;
+    height: 100vh;
+    transform: translate(-50%, -100%);
+
+    h5 {
+      padding: 4px 24px;
+      background-color: #d9d9d9;
+      display: inline-block;
+    }
+
+    .sprint-content {
+      @include dialog-content;
+      height: calc(100vh - 4rem);
+      justify-content: normal;
+
+      .sprint-drop {
+        background-image: url("../../assets/images/img_sprint.png");
+        background-repeat: no-repeat;
+        background-position: left top;
+        background-size: contain;
+        width: 80vw;
+        height: 35vw;
+        margin-top: 5rem;
+        position: relative;
+
+        .drop-item {
+          margin: unset;
+          position: absolute;
+          &:nth-child(1) {
+            top: 45%;
+            left: 30%;
+          }
+
+          &:nth-child(2) {
+            top: 20%;
+            right: 10%;
+          }
+
+          &:nth-child(3) {
+            bottom: 17%;
+            right: 5%;
+          }
+        }
+      }
+
+      .sprint-list {
+        display: grid;
+        gap: 4rem;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        min-height: 110px;
+      }
+
+      .drop-item {
+        width: 180px;
+        height: auto;
+        margin: auto;
+        padding: 0.5rem;
+
+        &:nth-child(even) {
+          margin-top: 3rem;
+        }
+      }
+
+      .next-step {
+        margin: 2rem;
+      }
+    }
+  }
+}

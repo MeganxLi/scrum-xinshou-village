@@ -1,5 +1,6 @@
 import { Undo } from "@icon-park/react";
 import React, { useEffect, useRef, useState } from "react";
+import { useStep } from "../../context/StepContext";
 import { DialogOrder } from "../../utils/DialogOrder";
 
 interface props {
@@ -7,6 +8,7 @@ interface props {
 }
 
 const SprintList = ({ setOrder }: props) => {
+  const { nextStep } = useStep();
   const [sprintStep, setSprintStep] = useState<number>(0);
   const hiddenRef = useRef<boolean>(false);
 
@@ -93,10 +95,16 @@ const SprintList = ({ setOrder }: props) => {
             })}
           </div>
 
-          <button className="next-step chickara" style={{
-            visibility: sprintStep === 2
-              ? "visible" : "hidden"
-          }}>了解</button>
+          <button
+            className="next-step chickara"
+            style={{
+              visibility: sprintStep === 2
+                ? "visible" : "hidden"
+            }}
+            onClick={nextStep}
+          >
+            了解
+          </button>
 
           <ul className="slick-list">
             {Array.from(Array(3)).map((val, idx: number) => {

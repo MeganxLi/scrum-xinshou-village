@@ -1,0 +1,24 @@
+#End {
+  img {
+    position: absolute;
+  }
+  .end-role {
+    width: 90vw;
+    bottom: 12vw;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  .end-banner {
+    width: 100%;
+    bottom: 0;
+  }
+
+  .icon-undo {
+    transform: scaleX(-1);
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    color: $color-zorba;
+    cursor: pointer;
+  }
+}

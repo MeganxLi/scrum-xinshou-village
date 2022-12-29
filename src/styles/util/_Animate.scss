@@ -66,3 +66,18 @@
   -webkit-animation-name: zoomIn;
   animation-name: zoomIn;
 }
+
+@keyframes flowSprintInUp {
+  from {
+    transform: translate(-50%, 100%);
+  }
+
+  to {
+    transform: translate(-50%, 0);
+  }
+}
+
+.flowSprintInUp {
+  -webkit-animation-name: flowSprintInUp;
+  animation-name: flowSprintInUp;
+}

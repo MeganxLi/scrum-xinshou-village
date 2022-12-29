@@ -69,7 +69,7 @@ section {
 }
 
 #root:empty {
-  background-image: url("../../assets/imgaes/loading.gif");
+  background-image: url("../../assets/images/loading.gif");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -83,47 +83,25 @@ section {
   @include duration;
 }
 
+.animation-forwards {
+  animation-fill-mode: forwards;
+}
+
+.animation-backwards {
+  animation-fill-mode: backwards;
+}
+
 .dialog-box,
 .dialog-content {
-  border: 4px solid #201c1b;
-  border-radius: 8px;
+  @include dialog-border;
 }
 
 .dialog-box {
-  background-color: $color-zorba;
-  padding: 8px;
-  position: absolute;
-  bottom: 5%;
-  width: 90%;
-  left: 50%;
-  transform: translate(-50%, 0);
+  @include dialog-box;
 
   .dialog-content {
-    background-color: #f3eee9;
-    color: $color-gray;
-    padding: 2rem 2.5rem;
-    font-size: 2rem;
-    position: relative;
-    line-height: 150%;
-    text-align: justify;
-    letter-spacing: 0.05em;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
     min-height: 200px;
-
-    @include rwd(xl) {
-      font-size: 1.5rem;
-    }
-
-    @include rwd(xs) {
-      font-size: 1.2rem;
-    }
-    > div {
-      width: 100%;
-    }
+    @include dialog-content;
   }
   p {
     margin-bottom: 1rem;
@@ -160,5 +138,103 @@ section {
   button {
     margin: 0 auto;
     display: block;
+  }
+}
+
+.directions {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+.pad {
+  background-image: url("../../assets/images/pad_2.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  width: 100%;
+  max-width: 1100px;
+  height: calc(0.664 * 100vw);
+  max-height: 680px;
+  padding-top: 70px;
+  position: absolute;
+  top: 0;
+
+  .pad-content {
+    width: calc(100% - 458px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 1rem;
+    z-index: 2;
+    margin: 0 20vw;
+    margin-top: 2.5rem;
+  }
+
+  .pad-title {
+    color: $color-gray;
+    grid-area: title;
+    p {
+      margin-bottom: 0.5rem;
+      opacity: 0.6;
+    }
+  }
+  h5 {
+    color: $color-gray;
+    font-size: 2rem;
+    sub {
+      font-size: 1.5rem;
+    }
+
+    @include rwd(xl) {
+      font-size: 1.5rem;
+      sub {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .drop-list,
+  .drop-sort-list {
+    grid-area: list;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    justify-items: center;
+    border-radius: 20px;
+    padding: 1rem 0;
+  }
+
+  .drop-sort-list {
+    grid-area: sort;
+    height: -webkit-fill-available;
+  }
+}
+
+.drop-item {
+  outline: 3px solid $color-blue;
+  border: 3px solid #f4eee8;
+  background-color: $color-blue;
+  border-radius: 5px;
+  margin: 1rem;
+  width: 100%;
+  max-width: 230px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: $color-white;
+
+  p {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+    text-align: center;
+  }
+  .drop-item-subtitle {
+    font-size: 12px;
   }
 }
