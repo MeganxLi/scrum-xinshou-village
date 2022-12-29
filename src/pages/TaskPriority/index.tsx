@@ -1,38 +1,15 @@
 import { useState } from "react";
-import uuid from "react-uuid";
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
 import { useStep } from "../../context/StepContext";
 import { handleDragEnd } from "../../utils/handleDragEnd";
 import DropList from "../../components/DropList";
+import { TaskPriorityItem } from "../../constants/EnumType";
 
 const animationDelay = { animationDelay: "1s" };
 
 const TaskPriority = () => {
   const { nextStep } = useStep();
-  const [items, setItems] = useState<TaskPriorityItemsType>({
-    candidate: [
-      {
-        title: "後台職缺管理功能",
-        subtitle: "（資訊上架、下架、顯示應徵者資料）",
-        id: uuid(),
-      },
-      {
-        title: "會員系統",
-        subtitle: "（登入、註冊、權限管理）",
-        id: uuid(),
-      },
-      {
-        title: "線上履歷編輯器",
-        id: uuid(),
-      },
-      {
-        title: "前台職缺列表",
-        subtitle: "（職缺詳細內容、發送應徵意願）",
-        id: uuid(),
-      },
-    ],
-    sprintList: [],
-  });
+  const [items, setItems] = useState<TaskItemsType>(TaskPriorityItem);
 
   const onDragEnd = (event: DropResult) => {
     const { source, destination } = event;

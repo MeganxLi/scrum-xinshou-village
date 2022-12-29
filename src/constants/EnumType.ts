@@ -5,7 +5,32 @@ export enum DialogIconButton {
   DownOne = "DownOne",
 }
 
-export const TaskShortItem: TaskPriorityItemsType = {
+export const TaskPriorityItem: TaskItemsType = {
+  candidate: [
+    {
+      title: "後台職缺管理功能",
+      subtitle: "（資訊上架、下架、顯示應徵者資料）",
+      id: uuid(),
+    },
+    {
+      title: "會員系統",
+      subtitle: "（登入、註冊、權限管理）",
+      id: uuid(),
+    },
+    {
+      title: "線上履歷編輯器",
+      id: uuid(),
+    },
+    {
+      title: "前台職缺列表",
+      subtitle: "（職缺詳細內容、發送應徵意願）",
+      id: uuid(),
+    },
+  ],
+  sprintList: [],
+};
+
+export const TaskShortItem: TaskItemsType = {
   candidate: [
     {
       title: "後台職缺管理功能",
@@ -31,10 +56,10 @@ export const TaskShortItem: TaskPriorityItemsType = {
       score: 15,
     },
   ],
-  sprintList: []
+  sprintList: [],
 };
 
-export const TaskFlowItem: TaskPriorityItemsType = {
+export const TaskFlowItem: TaskItemsType = {
   candidate: [
     {
       title: "短衝自省會議",
@@ -52,5 +77,5 @@ export const TaskFlowItem: TaskPriorityItemsType = {
       id: uuid(),
     },
   ],
-  sprintList: []
+  sprintList: [],
 };
