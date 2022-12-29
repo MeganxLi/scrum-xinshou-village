@@ -1,7 +1,7 @@
 import { Draggable, Droppable } from "react-beautiful-dnd";
 
 interface props {
-  items: TaskPriorityItemsType;
+  items: TaskItemsType;
   droppableId: string;
   horizontal?: boolean;
   className: string;
@@ -14,7 +14,7 @@ const DropList = ({ items, droppableId, horizontal, className, style, children }
     <Droppable droppableId={droppableId} direction={horizontal ? "horizontal" : "vertical"}>
       {(provided) => (
         <div className={className} ref={provided.innerRef} {...provided.droppableProps} style={style}>
-          {items[droppableId as keyof TaskPriorityItemsType].map((item: DropItemType, index: number) => {
+          {items[droppableId as keyof TaskItemsType].map((item: DropItemType, index: number) => {
             return (
               <Draggable draggableId={item.id} index={index} key={item.id}>
                 {(provided) => (

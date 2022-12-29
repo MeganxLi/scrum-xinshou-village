@@ -12,7 +12,7 @@ const TaskFlow = () => {
   const [other, setOther] = useState<number>(0);
   DialogOrder(other, setOther, []);
 
-  const [items, setItems] = useState<TaskPriorityItemsType>(TaskFlowItem);
+  const [items, setItems] = useState<TaskItemsType>(TaskFlowItem);
 
   const onDragEnd = (event: DropResult) => {
     const { source, destination } = event;

@@ -8,7 +8,7 @@ import { handleDragEnd } from "../../utils/handleDragEnd";
 
 const TaskShort = () => {
   const { nextStep } = useStep();
-  const [items, setItems] = useState<TaskPriorityItemsType>(JSON.parse(JSON.stringify(TaskShortItem)));
+  const [items, setItems] = useState<TaskItemsType>(JSON.parse(JSON.stringify(TaskShortItem)));
   const [totalScoreSum, setTotalScoreSum] = useState(0);
 
   const onDragEnd = (event: DropResult) => {

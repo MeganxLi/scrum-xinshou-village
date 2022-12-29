@@ -1,13 +1,13 @@
 import { DraggableLocation } from "react-beautiful-dnd";
 
 export const handleDragEnd = (
-  items: TaskPriorityItemsType,
+  items: TaskItemsType,
   source: DraggableLocation,
   destination: DraggableLocation
-): TaskPriorityItemsType => {
+): TaskItemsType => {
   const newItems = { ...items };
-  const [dragItem] = newItems[source.droppableId as keyof TaskPriorityItemsType].splice(source.index, 1);
-  newItems[destination.droppableId as keyof TaskPriorityItemsType].splice(destination.index, 0, dragItem);
+  const [dragItem] = newItems[source.droppableId as keyof TaskItemsType].splice(source.index, 1);
+  newItems[destination.droppableId as keyof TaskItemsType].splice(destination.index, 0, dragItem);
 
   return newItems;
 };
