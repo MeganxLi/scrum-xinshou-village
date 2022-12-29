@@ -1,10 +1,11 @@
 import { DownOne } from "@icon-park/react";
 import { useState } from "react";
-import { DragDropContext, Droppable } from "react-beautiful-dnd";
-import DropItem from "../../components/DropItem";
+import { DragDropContext, DropResult } from "react-beautiful-dnd";
+import DropList from "../../components/DropList";
 import { TaskFlowItem } from "../../constants/EnumType";
 import { useStep } from "../../context/StepContext";
 import { DialogOrder } from "../../utils/DialogOrder";
+import { handleDragEnd } from "../../utils/handleDragEnd";
 
 const TaskFlow = () => {
   const { nextStep } = useStep();
@@ -13,30 +14,14 @@ const TaskFlow = () => {
 
   const [items, setItems] = useState<TaskPriorityItemsType>(TaskFlowItem);
 
-  const onDragEnd = (event: any) => {
+  const onDragEnd = (event: DropResult) => {
     const { source, destination } = event;
-    console.log(source, destination);
 
     // dropped outside the list
     if (!destination) {
       return;
     }
-
-    const newItems = { ...items };
-
-    const [dragItem] = newItems[
-      source.droppableId as keyof TaskPriorityItemsType
-    ].splice(source.index, 1);
-
-    console.log("dragItem", dragItem);
-
-    newItems[destination.droppableId as keyof TaskPriorityItemsType].splice(
-      destination.index,
-      0,
-      dragItem
-    );
-
-    setItems(newItems);
+    setItems(handleDragEnd(items, source, destination));
   };
 
   return (
@@ -64,40 +49,15 @@ const TaskFlow = () => {
           <h5>Sprint 流程圖</h5>
 
           <DragDropContext onDragEnd={onDragEnd}>
-            <Droppable droppableId="sprintList" >
-              {(provided) => (
-                <div
-                  className="sprint-drop"
-                  ref={provided.innerRef}
-                  {...provided.droppableProps}
-                >
-                  {items.sprintList.map((item: DropItemType, index: number) => {
-                    return (
-                      <DropItem item={item} index={index} key={item.id} />
-                    );
-                  })}
-
-                  {provided.placeholder}
-                </div>
-
-              )}
-            </Droppable>
-
-            <Droppable droppableId="candidate">
-              {(provided) => (
-                <div className="sprint-list" ref={provided.innerRef} {...provided.droppableProps}>
-                  {items.candidate.map((item: DropItemType, index: number) => {
-                    return <DropItem item={item} index={index} key={item.id} />;
-                  })}
-                  {provided.placeholder}
-                </div>
-              )}
-            </Droppable>
+            <DropList items={items} droppableId="sprintList" className="sprint-drop" />
+            <DropList items={items} droppableId="candidate" horizontal={true} className="sprint-list" />
           </DragDropContext>
-          <button
-            className="next-step chickara"
-            onClick={nextStep}
-          >提交</button>
+
+          {items.sprintList.length === 3 && (
+            <button className="next-step chickara" onClick={nextStep}>
+              提交
+            </button>
+          )}
         </div>
       </div>
     </section>
