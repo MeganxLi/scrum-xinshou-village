@@ -42,7 +42,12 @@ const TaskPriority = () => {
               </h5>
             </div>
 
-            <DropList items={items} droppableId="candidate" className="drop-list">
+            <DropList
+              items={items}
+              droppableId="candidate"
+              className="drop-list"
+              isDropDisabled={items.candidate.length === 0}
+            >
               {items.candidate.length === 0 && (
                 <button className="next-step chickara" onClick={nextStep}>
                   Done!
