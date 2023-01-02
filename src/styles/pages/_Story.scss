@@ -1,5 +1,8 @@
 #Story {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 
   img {
     margin: 0 auto;
@@ -15,14 +18,8 @@
   }
 
   .pad {
-    position: absolute;
+    top: auto;
     bottom: 0;
-    background-image: url("../../assets/images/pad.png");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: calc(0.664 * 100vw);
-    padding-top: calc(0.08 * 100vw);
     display: flex;
     flex-direction: column;
     align-items: center;
