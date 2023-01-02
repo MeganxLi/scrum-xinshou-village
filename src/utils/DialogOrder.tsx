@@ -22,8 +22,6 @@ export const DialogOrder = (
   }, [order]);
 
   useEffect(() => {
-    console.log(times);
-
     if (!start) {
       return;
     }
