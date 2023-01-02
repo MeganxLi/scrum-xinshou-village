@@ -38,6 +38,14 @@
     .drop-sort-list {
       outline: 4px dashed $color-blue;
       border-radius: 20px;
+
+      [class*="animate__"] {
+        @include duration;
+        animation-iteration-count: infinite;
+      }
+    }
+    .drop-list {
+      height: -webkit-fill-available;
     }
     .drop-item {
       position: relative;

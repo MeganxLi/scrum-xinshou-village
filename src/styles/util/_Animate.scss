@@ -1,3 +1,16 @@
+@mixin duration {
+  animation-duration: calc(var(--animate-duration) * 0.75);
+}
+
+.duration {
+  @include duration;
+}
+
+.paused {
+  animation-play-state: paused;
+}
+
+/* keyframes */
 @keyframes slideInUp {
   from {
     -webkit-transform: translate3d(0, 100%, 0);
@@ -17,11 +30,6 @@
   -webkit-animation-name: slideInUp;
   animation-name: slideInUp;
 }
-
-@mixin duration {
-  animation-duration: calc(var(--animate-duration) * 0.75);
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;

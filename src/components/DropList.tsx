@@ -7,11 +7,26 @@ interface props {
   className: string;
   style?: React.CSSProperties;
   children?: React.ReactNode;
+  isDropDisabled?: boolean;
+  childrenClassName?: string;
 }
 
-const DropList = ({ items, droppableId, horizontal, className, style, children }: props) => {
+const DropList = ({
+  items,
+  droppableId,
+  horizontal,
+  className,
+  style,
+  children,
+  isDropDisabled,
+  childrenClassName
+}: props) => {
   return (
-    <Droppable droppableId={droppableId} direction={horizontal ? "horizontal" : "vertical"}>
+    <Droppable
+      droppableId={droppableId}
+      direction={horizontal ? "horizontal" : "vertical"}
+      isDropDisabled={isDropDisabled}
+    >
       {(provided) => (
         <div className={className} ref={provided.innerRef} {...provided.droppableProps} style={style}>
           {items[droppableId as keyof TaskItemsType].map((item: DropItemType, index: number) => {
@@ -19,7 +34,7 @@ const DropList = ({ items, droppableId, horizontal, className, style, children }
               <Draggable draggableId={item.id} index={index} key={item.id}>
                 {(provided) => (
                   <div
-                    className="drop-item"
+                    className={`drop-item ${childrenClassName}`}
                     ref={provided.innerRef}
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}
