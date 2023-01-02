@@ -1,5 +1,5 @@
 import { Undo } from "@icon-park/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
 import DropList from "../../components/DropList";
 import { TaskShortItem } from "../../constants/EnumType";
@@ -10,6 +10,7 @@ const TaskShort = () => {
   const { nextStep } = useStep();
   const [items, setItems] = useState<TaskItemsType>(JSON.parse(JSON.stringify(TaskShortItem)));
   const [totalScoreSum, setTotalScoreSum] = useState(0);
+  const [paused, setPaused] = useState<boolean>(false);
 
   const onDragEnd = (event: DropResult) => {
     const { source, destination } = event;
@@ -28,6 +29,23 @@ const TaskShort = () => {
   const handleReset = () => {
     setItems(JSON.parse(JSON.stringify(TaskShortItem)));
   };
+
+  const clickNextStep = () => {
+    if (totalScoreSum === 16) {
+      nextStep();
+    } else {
+      setPaused(true);
+    }
+  };
+
+  useEffect(() => {
+    if (!paused) return;
+
+    const interval = setInterval(() => {
+      setPaused(false);
+    }, 500);
+    return () => clearInterval(interval);
+  }, [paused]);
 
   return (
     <section id="TaskShort" className="flex-center">
@@ -64,14 +82,14 @@ const TaskShort = () => {
               items={items}
               droppableId="sprintList"
               className="drop-sort-list"
-              childrenClassName={"animate__headShake"}
+              childrenClassName={`${paused ? "animate__headShake" : ""}`}
             />
           </DragDropContext>
           <div className="pad-action">
             <img
               src={process.env.PUBLIC_URL + "/images/go.png"}
-              style={{ visibility: totalScoreSum === 16 ? "visible" : "hidden", cursor: "pointer" }}
-              onClick={nextStep}
+              style={{ visibility: totalScoreSum > 0 ? "visible" : "hidden", cursor: "pointer" }}
+              onClick={clickNextStep}
             />
             <Undo strokeWidth={4} size={32} className="icon-undo" onClick={handleReset} />
           </div>
