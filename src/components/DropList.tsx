@@ -8,9 +8,19 @@ interface props {
   style?: React.CSSProperties;
   children?: React.ReactNode;
   isDropDisabled?: boolean;
+  childrenClassName?: string;
 }
 
-const DropList = ({ items, droppableId, horizontal, className, style, children, isDropDisabled }: props) => {
+const DropList = ({
+  items,
+  droppableId,
+  horizontal,
+  className,
+  style,
+  children,
+  isDropDisabled,
+  childrenClassName
+}: props) => {
   return (
     <Droppable
       droppableId={droppableId}
@@ -24,7 +34,7 @@ const DropList = ({ items, droppableId, horizontal, className, style, children, 
               <Draggable draggableId={item.id} index={index} key={item.id}>
                 {(provided) => (
                   <div
-                    className="drop-item"
+                    className={`drop-item ${childrenClassName}`}
                     ref={provided.innerRef}
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}

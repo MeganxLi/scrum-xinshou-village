@@ -60,7 +60,12 @@ const TaskShort = () => {
             <h5 style={{ gridArea: "title2" }}>
               短衝待辦清單 <sub>(Product Backlog)</sub>
             </h5>
-            <DropList items={items} droppableId="sprintList" className="drop-sort-list" />
+            <DropList
+              items={items}
+              droppableId="sprintList"
+              className="drop-sort-list"
+              childrenClassName={"animate__headShake"}
+            />
           </DragDropContext>
           <div className="pad-action">
             <img
