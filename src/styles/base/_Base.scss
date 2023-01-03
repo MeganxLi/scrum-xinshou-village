@@ -45,6 +45,9 @@ body {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  @include rwd(xs) {
+    height: 95vh;
+  }
 }
 
 body,
@@ -66,6 +69,36 @@ p {
 
 section {
   height: 100%;
+  @include rwd(md) {
+    display: none !important;
+  }
+}
+
+#notice > .notice {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $color-gray;
+  display: none;
+  @include rwd(md) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  img {
+    width: 20%;
+  }
+  p {
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 3px $color-yellow;
+    padding: 2rem;
+    text-align: center;
+  }
 }
 
 #root:empty {
