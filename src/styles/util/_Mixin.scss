@@ -65,11 +65,11 @@ $media: (
   2xl: 1536px,
 );
 
-@mixin rwd($breakpoint) {
+@mixin rwd($breakpoint, $width: "max-width") {
   @if map-has-key($media, $breakpoint) {
     $point: map-get($media, $breakpoint);
 
-    @media (max-width: $point) {
+    @media ($width: $point) {
       @content;
     }
   } @else {

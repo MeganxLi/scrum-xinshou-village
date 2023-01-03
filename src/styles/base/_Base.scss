@@ -69,16 +69,20 @@ p {
 
 section {
   height: 100%;
-  @include rwd(sm) {
+  @include rwd(md) {
     display: none !important;
   }
 }
 
-.notice {
+#notice > .notice {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $color-gray;
   display: none;
-  width: 100%;
-  height: 100%;
-  @include rwd(sm) {
+  @include rwd(md) {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -87,7 +91,7 @@ section {
   }
 
   img {
-    width: 10rem;
+    width: 20%;
   }
   p {
     font-size: 1.2rem;
