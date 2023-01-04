@@ -11,11 +11,12 @@
 ### UIUX Design
 [Rong](https://2022.thef2e.com/users/12061549261454740001) [Figma Scrum 新手村](https://www.figma.com/file/jgXAB3432Be71YoY7AWloP/F2E-%7C-WEEK-3?node-id=0%3A1) UIUX
 
-### planning
+### Planning
  - React
  - TypeScript
  - SCSS
  - react-beautiful-dnd 
+ - react-uuid
 
 ## Building 
 ### Install Packages 
