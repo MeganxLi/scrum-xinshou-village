@@ -7,6 +7,8 @@ import { useStep } from "../../context/StepContext";
 import { handleDragEnd } from "../../utils/handleDragEnd";
 import { useHeadShake } from "../../utils/HeadShakeHook";
 
+const maxTotal = 20;
+
 const TaskShort = () => {
    const { nextStep } = useStep();
    const [items, setItems] = useState<TaskItemsType>(JSON.parse(JSON.stringify(TaskShortItem)));
@@ -35,7 +37,7 @@ const TaskShort = () => {
    };
 
    const clickNextStep = () => {
-      if (totalScoreSum === 16) {
+      if (totalScoreSum < maxTotal) {
          nextStep();
       } else {
          setPaused(true);
