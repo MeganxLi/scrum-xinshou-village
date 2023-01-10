@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/scrum-xinshou-village/static/css/main.49849ce6.css",
-    "main.js": "/scrum-xinshou-village/static/js/main.8eefcc8f.js",
+    "main.css": "/scrum-xinshou-village/static/css/main.8d53c47e.css",
+    "main.js": "/scrum-xinshou-village/static/js/main.34d91c54.js",
     "static/media/openhuninn.ttf": "/scrum-xinshou-village/static/media/openhuninn.8b3953f644e641262a5c.ttf",
     "static/media/KFhimaji.otf": "/scrum-xinshou-village/static/media/KFhimaji.c76a05589985f18e42fb.otf",
     "static/media/CHIKARA-DZUYOKU.ttf": "/scrum-xinshou-village/static/media/CHIKARA-DZUYOKU.a0dfe19c47d73fac1c2f.ttf",
@@ -9,11 +9,11 @@
     "static/media/loading.gif": "/scrum-xinshou-village/static/media/loading.cb2339da7408aa625a6a.gif",
     "static/media/img_sprint.png": "/scrum-xinshou-village/static/media/img_sprint.6566f6bc644ffdd9b553.png",
     "index.html": "/scrum-xinshou-village/index.html",
-    "main.49849ce6.css.map": "/scrum-xinshou-village/static/css/main.49849ce6.css.map",
-    "main.8eefcc8f.js.map": "/scrum-xinshou-village/static/js/main.8eefcc8f.js.map"
+    "main.8d53c47e.css.map": "/scrum-xinshou-village/static/css/main.8d53c47e.css.map",
+    "main.34d91c54.js.map": "/scrum-xinshou-village/static/js/main.34d91c54.js.map"
   },
   "entrypoints": [
-    "static/css/main.49849ce6.css",
-    "static/js/main.8eefcc8f.js"
+    "static/css/main.8d53c47e.css",
+    "static/js/main.34d91c54.js"
   ]
 }
