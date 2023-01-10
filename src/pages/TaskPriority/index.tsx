@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { DragDropContext, DragUpdate, DropResult } from "react-beautiful-dnd";
 import { useStep } from "../../context/StepContext";
-import { handleDragEnd } from "../../utils/handleDragEnd";
+import { handleDragEnd, getListSort } from "../../utils/handleDragEnd";
 import DropList from "../../components/DropList";
 import { TaskPriorityItem } from "../../constants/EnumType";
 import { useHeadShake } from "../../utils/HeadShakeHook";
@@ -42,20 +42,7 @@ const TaskPriority = () => {
    };
 
    const clickNextStep = () => {
-      let verifyOrder = false;
-      const sprintList = items.sprintList;
-
-      for (let i = 0; i < sprintList.length; i++) {
-         if (sprintList[i].priority === i + 1) {
-            verifyOrder = true;
-            continue;
-         } else {
-            verifyOrder = false;
-            break;
-         }
-      }
-
-      if (verifyOrder) {
+      if (getListSort(items.sprintList)) {
          nextStep();
       } else {
          setPaused(true);
